@@ -1,0 +1,38 @@
+{
+  "name": "hono-ncm",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@8.15.4",
+  "author": {
+    "name": "Chilfish",
+    "email": "chill4fish@gmail.com",
+    "url": "https://chilfish.top"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Chilfish/hono-ncm.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chilfish/hono-ncm.git"
+  },
+  "scripts": {
+    "start": "vercel dev",
+    "prepare": "husky",
+    "lint": "eslint . --fix",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "hono": "^4.1.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.8.2",
+    "eslint": "npm:eslint-ts-patch@8.57.0-0",
+    "eslint-ts-patch": "8.57.0-0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "vercel": "^33.6.0"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
