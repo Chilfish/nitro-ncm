@@ -1,6 +1,6 @@
-import {consola} from 'consola'
+import { consola } from 'consola'
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   consola.info('Hello world')
 
   return {

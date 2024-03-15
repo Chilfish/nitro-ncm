@@ -8,6 +8,11 @@ export default defineNitroConfig({
     '/': { redirect: '/api' },
   },
 
+  imports: {
+    dirs: [
+    ],
+  },
+
   typescript: {
     strict: true,
     tsConfig: {
