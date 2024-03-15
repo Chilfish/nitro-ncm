@@ -2,9 +2,9 @@
 .husky
 .vscode
 node_modules
-scripts
 CHANGELOG.md
 README.md
+dist
 
 *.log
 .output

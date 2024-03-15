@@ -1,6 +1,5 @@
 {
   "name": "hono-ncm",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@8.15.4",
@@ -26,10 +25,10 @@
   ],
   "scripts": {
     "dev": "tsx watch --no-cache src/node.ts",
-    "build": "unbuild",
+    "build": "tsx scripts/build.ts",
     "start": "tsx src/node.ts",
-    "prepare": "husky",
-    "lint": "eslint . --fix"
+    "prepare": "husky || true && pnpm build",
+    "lint": "eslint ."
   },
   "dependencies": {
     "hono": "^4.1.0"
