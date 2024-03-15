@@ -13,14 +13,11 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^2.8.2
     version: 2.8.2(@vue/compiler-sfc@3.4.21)(eslint-ts-patch@8.57.0-0)(typescript@5.4.2)
-  consola:
-    specifier: ^3.2.3
-    version: 3.2.3
   eslint:
     specifier: npm:eslint-ts-patch@8.57.0-0
     version: /eslint-ts-patch@8.57.0-0
   eslint-ts-patch:
-    specifier: 8.57.0-0
+    specifier: ^8.57.0-0
     version: 8.57.0-0
   husky:
     specifier: ^9.0.11
@@ -1795,6 +1792,7 @@ packages:
   /consola@3.2.3:
     resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
+    dev: false
 
   /console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}

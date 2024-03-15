@@ -10,25 +10,24 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "nitropack dev",
-    "build": "nitropack build",
+    "dev": "nitro dev",
+    "build": "nitro build",
     "preview": "node .output/server/index.mjs",
     "lint": "eslint .",
-    "prepare": "nitropack prepare && husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "nitropack": "^2.9.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.2",
-    "consola": "^3.2.3",
     "eslint": "npm:eslint-ts-patch@8.57.0-0",
-    "eslint-ts-patch": "8.57.0-0",
+    "eslint-ts-patch": "^8.57.0-0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "typescript": "^5.4.2"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*.{json,md,js,ts}": "eslint"
   }
 }

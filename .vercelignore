@@ -6,3 +6,9 @@ node_modules
 .env*
 !.env.example
 *.pem
+.husky
+.editorconfig
+eslint.config.ts
+LICENSE
+README.md
+.vscode
