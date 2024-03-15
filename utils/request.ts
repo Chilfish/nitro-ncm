@@ -44,7 +44,7 @@ function chooseUserAgent(ua: 'mobile' | 'pc' = 'mobile') {
 
 interface ReqOptions {
   ua: 'mobile' | 'pc'
-  crypto: 'weapi' | 'linuxapi' | 'eapi'
+  crypto: 'weapi' | 'linuxapi' | 'eapi' | 'api'
   ip: string
   cookie: Record<string, any> | string
 }
