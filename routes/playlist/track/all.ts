@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   const limit = Number(query.limit) || Number.POSITIVE_INFINITY
   const offset = Number(query.offset) || 0
-  const cookie = parseCookies(event)
+  const cookie = getToken(event)
 
   const result = await createRequest(`https://music.163.com/api/v6/playlist/detail`, {
     method: 'POST',
