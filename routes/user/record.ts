@@ -1,6 +1,5 @@
 export default defineEventHandler(async (event) => {
   const query = getQuery<{
-    cookie: string
     uid: string
     type?: 1 | 0 // 1: 最近一周, 0: 所有时间
   }>(event)

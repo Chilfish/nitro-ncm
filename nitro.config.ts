@@ -4,8 +4,9 @@ const root = path.resolve()
 
 export default defineNitroConfig({
   routeRules: {
-    '/**': { cors: true },
     '/': { redirect: '/api' },
+    '/**': { cors: true, cache: { maxAge: 60 * 60 * 12 } },
+    '/user/anon-token': { cache: { maxAge: 60 } },
   },
 
   imports: {

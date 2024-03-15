@@ -25,6 +25,13 @@ export default defineEventHandler(async (event) => {
     },
   })
 
+  if (!result.data.playlist) {
+    return createError({
+      message: `[获取歌单列表] ${result.data.message}`,
+      statusCode: result.data.code || 404,
+    })
+  }
+
   const trackIds = result.data.playlist.trackIds
   const idsData = {
     c: `[${trackIds
@@ -40,6 +47,13 @@ export default defineEventHandler(async (event) => {
     cookie,
     body: idsData,
   })
+
+  if (!res.data.songs) {
+    return createError({
+      message: `[获取歌单列表] ${result.data.message}`,
+      statusCode: res.data.code || 404,
+    })
+  }
 
   return {
     ...res,

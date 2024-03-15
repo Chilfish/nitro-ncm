@@ -19,10 +19,6 @@ function cloudmusic_dll_encode_id(some_id: string) {
  * 生成匿名账号
  */
 export default defineEventHandler(async (event) => {
-  const { cookie } = getQuery<{
-    cookie: Record<string, string>
-  }>(event)
-
   // cookie.os = 'iOS'
   const deviceId = `NMUSIC`
   const encodedId = CryptoJS.enc.Base64.stringify(
@@ -34,15 +30,11 @@ export default defineEventHandler(async (event) => {
     username: encodedId,
   }
 
-  const result = await createRequest(
-    `https://music.163.com/api/register/anonimous`,
-    {
-      method: 'POST',
-      body,
-      crypto: 'weapi',
-      cookie,
-    },
-  )
+  const result = await createRequest(`https://music.163.com/api/register/anonimous`, {
+    method: 'POST',
+    body,
+    crypto: 'weapi',
+  })
 
   Object.entries<string>(result.data.cookies)
     .forEach(([key, value]) => {

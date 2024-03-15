@@ -1,10 +1,10 @@
 import crypto from 'node:crypto'
-import { URL, URLSearchParams } from 'node:url'
+import { URLSearchParams } from 'node:url'
 
 import type { FetchOptions } from 'ofetch'
 
 import * as encrypt from './crypto'
-import { anonToken } from '.'
+import { anonToken } from './token'
 
 /**
  * 选择一个随机的 User-Agent
@@ -175,12 +175,26 @@ export const createRequest = (
   } as Answer
 
   $fetch<Body>(url, {
+    ...options,
     method: (options.method as any).toUpperCase(),
     headers,
     body: new URLSearchParams(data).toString(),
     params: {
       ...options.params,
       csrf_token: data.csrf_token,
+    },
+
+    onRequestError({ error, response }) {
+      throw createError({
+        message: error.message,
+        statusCode: response?.status,
+      })
+    },
+    onResponseError({ error, response }) {
+      throw createError({
+        message: error?.message || 'Unknown error',
+        statusCode: response?.status || 500,
+      })
     },
 
     onResponse({ response }) {
