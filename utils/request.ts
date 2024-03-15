@@ -167,7 +167,7 @@ export const createRequest = (
     // settings.responseType = 'arraybuffer'
   }
 
-  // console.log('Request:', url, options, data, headers)
+  // console.log('Request:', url, options, headers)
 
   const answer = {
     status: 200,
@@ -175,10 +175,17 @@ export const createRequest = (
   } as Answer
 
   $fetch<Body>(url, {
-    method: options.method as any,
+    method: (options.method as any).toUpperCase(),
     headers,
     body: new URLSearchParams(data).toString(),
+    params: {
+      ...options.params,
+      csrf_token: data.csrf_token,
+    },
+
     onResponse({ response }) {
+      // console.log('Response: ', response._data)
+
       const cookies = response.headers.getSetCookie()
       if (cookies.length < 1)
         return
@@ -217,7 +224,7 @@ export const createRequest = (
       }
     }
 
-    // console.log('Answer:', answer)
+    // console.log('Answer:', answer, body)
     if (answer.status === 200)
       resolve(answer)
     else
