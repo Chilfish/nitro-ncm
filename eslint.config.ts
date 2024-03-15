@@ -5,5 +5,8 @@ export default antfu({
   ],
   rules: {
     'no-console': 'off',
+    'ts/no-require-imports': 'off',
+    'ts/no-var-requires': 'off',
+    'node/prefer-global/process': 'off',
   },
 })

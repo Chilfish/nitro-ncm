@@ -1,7 +1,6 @@
 .github
 .husky
 .vscode
-dist
 node_modules
 scripts
 CHANGELOG.md

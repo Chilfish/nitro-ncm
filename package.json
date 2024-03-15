@@ -15,22 +15,36 @@
     "type": "git",
     "url": "https://github.com/Chilfish/hono-ncm.git"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "vercel dev",
+    "dev": "tsx watch --no-cache src/node.ts",
+    "build": "unbuild",
+    "start": "tsx src/node.ts",
     "prepare": "husky",
-    "lint": "eslint . --fix",
-    "deploy": "vercel"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "hono": "^4.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.2",
+    "@hono/node-server": "^1.8.2",
+    "@types/node": "^20.11.27",
     "eslint": "npm:eslint-ts-patch@8.57.0-0",
     "eslint-ts-patch": "8.57.0-0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "vercel": "^33.6.0"
+    "module-alias": "^2.2.3",
+    "tsx": "^4.7.1",
+    "unbuild": "^2.0.0"
   },
   "lint-staged": {
     "*": "eslint --fix"
