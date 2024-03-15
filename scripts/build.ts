@@ -7,6 +7,6 @@ const root = resolve()
 execSync('pnpm unbuild', { stdio: 'inherit' })
 
 copyFileSync(
-  join(root, 'dist', 'index.cjs'),
+  join(root, 'dist', 'index.mjs'),
   join(root, 'api', 'index.cjs'),
 )
