@@ -1,5 +1,4 @@
 import CryptoJS from 'crypto-js'
-import { consola } from 'consola'
 
 const ID_XOR_KEY_1 = '3go8&$833h0k(2)2'
 
